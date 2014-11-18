@@ -51,14 +51,14 @@ class SettingsViewController: UITableViewController {
           if userInfo != nil {
             dispatch_async(dispatch_get_main_queue()) {
               let nameText = "Logged in as \(userInfo.firstName) \(userInfo.lastName)" //5
-              cell.textLabel.text = nameText
+                cell.textLabel?.text = nameText
             }
           }
         }
       }
       
       dispatch_async(dispatch_get_main_queue()) {
-        cell.textLabel.text = text
+        cell.textLabel?.text = text
         let enableSwitch = accountStatus == .Available //6
         self.tableView.reloadData()
       }
